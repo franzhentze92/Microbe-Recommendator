@@ -1,0 +1,171 @@
+/* General Styles */
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.card-header {
+    border-bottom: none;
+    background-color: #8cb43a !important; /* Main green color */
+}
+
+/* Progress Bar */
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    background-color: #8cb43a; /* Main green color */
+    transition: width 0.3s ease-in-out;
+}
+
+/* Form Elements */
+.form-select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select:focus {
+    border-color: #8cb43a;
+    box-shadow: 0 0 0 0.25rem rgba(140, 180, 58, 0.25);
+}
+
+.form-select option:checked, .form-select option:focus {
+    background-color: #e6f3ce;
+    color: #222;
+}
+
+/* Step Transitions */
+.step {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Explanation Text */
+.explanation-text {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-left: 4px solid #8cb43a;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #8cb43a;
+    border-color: #8cb43a;
+}
+
+.btn-primary:hover {
+    background-color: #7a9e32;
+    border-color: #7a9e32;
+}
+
+.btn-primary:focus, .btn-primary:active, .btn-primary:focus-visible {
+    background-color: #8cb43a !important;
+    border-color: #8cb43a !important;
+    box-shadow: 0 0 0 0.25rem rgba(140, 180, 58, 0.5) !important;
+    outline: none !important;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5c636a;
+    border-color: #565e64;
+}
+
+/* Results Section */
+#recommendation-results {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Welcome Screen */
+.welcome-screen {
+    text-align: center;
+    padding: 2rem;
+}
+
+.welcome-screen h2 {
+    color: #8cb43a;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-screen .steps-list {
+    text-align: left;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.welcome-screen .steps-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.welcome-screen .steps-list li:before {
+    content: "•";
+    color: #8cb43a;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.steps-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .card {
+        margin: 0;
+    }
+}
+
+.form-check-input:checked {
+    background-color: #8cb43a;
+    border-color: #8cb43a;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background-color: #8cb43a !important;
+    color: #fff !important;
+}
+
+.choices__list--single .choices__item {
+    color: #222;
+}
+
+.choices[data-type*=select-one] .choices__inner {
+    border-color: #8cb43a;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-selected {
+    background-color: #8cb43a !important;
+    color: #fff !important;
+} 

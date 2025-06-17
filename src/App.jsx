@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { products } from './data/products';
 import { benefits } from './data/benefits';
 import { microbes } from './data/microbes';
+import { microbialFoods } from './data/microbial_foods';
+import { productFoodRecommendations } from './data/product_food_recommendations';
 
 const MAIN_GREEN = '#8cb43a';
 
@@ -327,6 +329,20 @@ function Recommendations({ selectedBenefits, applicationMethod, products, allMic
     return '';
   };
 
+  // Helper to get unique microbe types for a product
+  const getMicrobeTypes = (product) => {
+    const types = product.microbes.map(name => {
+      const m = allMicrobes.find(x => x.name === name);
+      return m ? m.type : null;
+    }).filter(Boolean);
+    return Array.from(new Set(types));
+  };
+
+  // Helper to get recommended foods for a set of microbe types
+  const getRecommendedFoods = (microbeTypes) => {
+    return microbialFoods.filter(food => food.supports.some(type => microbeTypes.includes(type)));
+  };
+
   return (
     <div>
       <div className="step-title">Recommended Products</div>
@@ -345,43 +361,76 @@ function Recommendations({ selectedBenefits, applicationMethod, products, allMic
         )}
       </div>
       {products.length === 0 && <div style={{ color: 'crimson', margin: '1.5rem 0' }}>No products found for your selection.</div>}
-      {products.map((product) => (
-        <div key={product.product_name} style={{ border: '1px solid #e0e0e0', borderRadius: 8, margin: '1.2rem 0', padding: '1rem', background: '#fafcf7' }}>
-          <div style={{ fontWeight: 700, fontSize: '1.1rem', color: MAIN_GREEN }}>{product.product_name}</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, margin: '0.5rem 0' }}>
-            <img src={product.image} alt={product.product_name} style={{ maxWidth: 120, maxHeight: 120, margin: '0.5rem 0', borderRadius: 6, background: '#fff', objectFit: 'contain' }} />
-            <div>
-              <a href={product.link} target="_blank" rel="noopener noreferrer" style={{ color: MAIN_GREEN, fontWeight: 600, textDecoration: 'underline', marginRight: 12 }}>Product Page</a>
+      {products.map((product) => {
+        const microbeTypes = getMicrobeTypes(product);
+        const recommendedFoods = getRecommendedFoods(microbeTypes);
+        // Find product-specific food recommendation
+        const productFood = productFoodRecommendations.find(p => p.product_name === product.product_name);
+        return (
+          <div key={product.product_name} style={{ border: '1px solid #e0e0e0', borderRadius: 8, margin: '1.2rem 0', padding: '1rem', background: '#fafcf7' }}>
+            <div style={{ fontWeight: 700, fontSize: '1.1rem', color: MAIN_GREEN }}>{product.product_name}</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, margin: '0.5rem 0' }}>
+              <img src={product.image} alt={product.product_name} style={{ maxWidth: 120, maxHeight: 120, margin: '0.5rem 0', borderRadius: 6, background: '#fff', objectFit: 'contain' }} />
+              <div>
+                <a href={product.link} target="_blank" rel="noopener noreferrer" style={{ color: MAIN_GREEN, fontWeight: 600, textDecoration: 'underline', marginRight: 12 }}>Product Page</a>
+              </div>
+            </div>
+            <div style={{ margin: '0.5rem 0' }}>
+              <strong>Microbes:</strong> {product.microbes.join(', ')}
+            </div>
+            <div style={{ margin: '0.5rem 0' }}>
+              <strong>Some Benefits:</strong>
+              <ul style={{ margin: 0, paddingLeft: 18 }}>
+                {product.benefits.map(b => {
+                  const benefitObj = allBenefits.find(x => x.name === b);
+                  return (
+                    <li key={b} style={{ color: selectedBenefits.includes(b) ? MAIN_GREEN : '#333', fontWeight: selectedBenefits.includes(b) ? 600 : 400 }}>
+                      {b}
+                      {benefitObj && (
+                        <span style={{ color: '#888', fontSize: '0.95em', marginLeft: 6 }}>({benefitObj.description})</span>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div style={{ margin: '0.5rem 0', color: '#555', fontSize: '0.97em' }}>
+              <strong>Why recommended?</strong> This product matches your needs for: {product.benefits.filter(b => selectedBenefits.includes(b)).join(', ')}.
+              {/* If pathogen types were selected, show which microbes target them */}
+              {selectedBenefits.includes('Pathogen or pest control') && pathogenTypes && pathogenTypes.length > 0 && (
+                <div style={{ marginTop: 4 }}>{getPathogenExplanation(product, pathogenTypes)}</div>
+              )}
+            </div>
+            {/* Microbial food recommendation section */}
+            <div style={{ margin: '1.2rem 0 0.5rem 0', padding: '0.7rem 1rem', background: '#f3f7ea', borderRadius: 6 }}>
+              <div style={{ fontWeight: 600, color: MAIN_GREEN, marginBottom: 4 }}>Recommended Microbial Foods</div>
+              {productFood ? (
+                <>
+                  <ul style={{ margin: 0, paddingLeft: 18 }}>
+                    {productFood.recommended_foods.map(food => (
+                      <li key={food} style={{ marginBottom: 2 }}>{food}</li>
+                    ))}
+                  </ul>
+                  <div style={{ fontSize: '0.97em', color: '#444', marginTop: 6 }}><strong>Note:</strong> {productFood.notes}</div>
+                </>
+              ) : (
+                <>
+                  <div style={{ fontSize: '0.98em', color: '#444', marginBottom: 6 }}>
+                    To help these microbes thrive and perform optimally, consider adding the following foods to your program:
+                  </div>
+                  <ul style={{ margin: 0, paddingLeft: 18 }}>
+                    {recommendedFoods.map(food => (
+                      <li key={food.name} style={{ marginBottom: 2 }}>
+                        <strong>{food.name}:</strong> {food.description}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           </div>
-          <div style={{ margin: '0.5rem 0' }}>
-            <strong>Microbes:</strong> {product.microbes.join(', ')}
-          </div>
-          <div style={{ margin: '0.5rem 0' }}>
-            <strong>Some Benefits:</strong>
-            <ul style={{ margin: 0, paddingLeft: 18 }}>
-              {product.benefits.map(b => {
-                const benefitObj = allBenefits.find(x => x.name === b);
-                return (
-                  <li key={b} style={{ color: selectedBenefits.includes(b) ? MAIN_GREEN : '#333', fontWeight: selectedBenefits.includes(b) ? 600 : 400 }}>
-                    {b}
-                    {benefitObj && (
-                      <span style={{ color: '#888', fontSize: '0.95em', marginLeft: 6 }}>({benefitObj.description})</span>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div style={{ margin: '0.5rem 0', color: '#555', fontSize: '0.97em' }}>
-            <strong>Why recommended?</strong> This product matches your needs for: {product.benefits.filter(b => selectedBenefits.includes(b)).join(', ')}.
-            {/* If pathogen types were selected, show which microbes target them */}
-            {selectedBenefits.includes('Pathogen or pest control') && pathogenTypes && pathogenTypes.length > 0 && (
-              <div style={{ marginTop: 4 }}>{getPathogenExplanation(product, pathogenTypes)}</div>
-            )}
-          </div>
-        </div>
-      ))}
+        );
+      })}
       <button className="btn-main" style={{ background: '#eee', color: '#333' }} onClick={onBack}>
         Back
       </button>

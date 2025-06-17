@@ -62,6 +62,74 @@ $(document).ready(function() {
       }
     ];
 
+    // Microbe-to-benefit matrix
+    const microbeBenefitMatrix = [
+      { microbe: "Bacillus subtilis", benefits: ["pathogen", "root", "soil_balance", "foliar", "hormones"] },
+      { microbe: "Lactic acid bacteria", benefits: ["soil_balance", "pathogen"] },
+      { microbe: "Purple non-sulfur bacteria", benefits: ["soil_balance", "hormones"] },
+      { microbe: "Beneficial yeasts", benefits: ["soil_balance", "pathogen"] },
+      { microbe: "Fermenting fungi", benefits: ["soil_balance", "pathogen"] },
+      { microbe: "Azotobacter vinelandii (nitrogen-fixing bacteria)", benefits: ["nitrogen", "moisture", "root"] },
+      { microbe: "Azotobacter chroococcum", benefits: ["nitrogen", "root"] },
+      { microbe: "Gluconacetobacter diazotrophicus", benefits: ["nitrogen", "root"] },
+      { microbe: "Azospirillum brasilense", benefits: ["nitrogen", "root"] },
+      { microbe: "Bacillus polymyxa (phosphate-solubilising bacteria)", benefits: ["phosphorus", "soil_balance"] },
+      { microbe: "Bacillus megaterium (phosphate-solubilising bacteria)", benefits: ["phosphorus", "soil_balance"] },
+      { microbe: "Bacillus megaterium", benefits: ["phosphorus", "soil_balance"] },
+      { microbe: "Bacillus amyloliquefaciens", benefits: ["root", "pathogen", "soil_balance"] },
+      { microbe: "Bacillus licheniformis", benefits: ["root", "soil_balance"] },
+      { microbe: "Bacillus pumilus", benefits: ["root", "soil_balance"] },
+      { microbe: "Beauveria bassiana", benefits: ["pathogen"] },
+      { microbe: "Metarhizium anisopliae", benefits: ["pathogen"] },
+      { microbe: "Lecanicillium lecanii", benefits: ["pathogen"] },
+      { microbe: "Arbuscular Mycorrhizal Fungi (AMF)", benefits: ["mycorrhizae", "root", "soil_balance"] },
+      { microbe: "Glomus intraradices", benefits: ["mycorrhizae", "root"] },
+      { microbe: "Glomus clarum", benefits: ["mycorrhizae", "root"] },
+      { microbe: "Glomus aggregatum", benefits: ["mycorrhizae", "root"] },
+      { microbe: "Glomus deserticola", benefits: ["mycorrhizae", "root"] },
+      { microbe: "Glomus macrocarpum", benefits: ["mycorrhizae", "root"] },
+      { microbe: "Glomus caledonium", benefits: ["mycorrhizae", "root"] },
+      { microbe: "Glomus mosseae", benefits: ["mycorrhizae", "root"] },
+      { microbe: "Gigaspora rosea", benefits: ["mycorrhizae", "root"] },
+      { microbe: "Gigaspora margarita", benefits: ["mycorrhizae", "root"] },
+      { microbe: "Scutelospora heterogama", benefits: ["mycorrhizae", "root"] },
+      { microbe: "Pseudomonas fluorescens", benefits: ["pathogen", "soil_balance"] },
+      { microbe: "Trichoderma harzianum", benefits: ["pathogen", "root", "soil_balance", "foliar"] },
+      { microbe: "Trichoderma lignorum", benefits: ["pathogen", "root", "soil_balance"] },
+      { microbe: "Trichoderma koningii", benefits: ["pathogen", "root", "soil_balance", "foliar"] }
+    ];
+
+    // Load product and benefit data
+    let allProducts = [];
+    let allBenefits = [];
+    let productsLoaded = false;
+    let benefitsLoaded = false;
+
+    // Disable the button until data is loaded
+    $('#recommend-btn').prop('disabled', true).text('Loading...');
+
+    // Load products
+    fetch('recommendation_products.json')
+      .then(response => response.json())
+      .then(data => {
+        allProducts = data;
+        productsLoaded = true;
+        if (productsLoaded && benefitsLoaded) {
+          $('#recommend-btn').prop('disabled', false).text('Show Recommendations');
+        }
+      });
+
+    // Load benefits
+    fetch('microbe_benefits_database.json')
+      .then(response => response.json())
+      .then(data => {
+        allBenefits = data;
+        benefitsLoaded = true;
+        if (productsLoaded && benefitsLoaded) {
+          $('#recommend-btn').prop('disabled', false).text('Show Recommendations');
+        }
+      });
+
     // Update progress bar
     function updateProgress() {
         const progress = (currentStep / (totalSteps - 1)) * 100;
@@ -182,27 +250,24 @@ $(document).ready(function() {
 
     // Recommendation logic
     $('#recommend-btn').on('click', function() {
-        // Gather selected functions from checkboxes
-        const selectedFunctions = $('#functionCheckboxes input[type=checkbox]:checked').map(function() { return this.value; }).get();
+        // Gather selected benefits from checkboxes (use label text for now)
+        const selectedBenefits = $('#functionCheckboxes input[type=checkbox]:checked').map(function() {
+            return $(this).parent().text().trim();
+        }).get();
         const applicationMethod = $('#applicationMethod').val();
         let pathogenScope = null;
         let pathogenTypes = [];
-        let missing = false;
 
-        // Validation: at least one function must be selected
-        if (selectedFunctions.length === 0) {
+        // Validation: at least one benefit must be selected
+        if (selectedBenefits.length === 0) {
             alert('Please select at least one problem or function to target.');
             return;
         }
-
-        // Validation: application method must be selected
         if (!applicationMethod) {
             alert('Please select an application method.');
             return;
         }
-
-        // If pathogen is selected, validate pathogen questions
-        if (selectedFunctions.includes('pathogen')) {
+        if ($('#funcPathogen').is(':checked')) {
             pathogenScope = $('#pathogenTypeScope').val();
             pathogenTypes = [
                 $('#threatFungi').is(':checked') ? 'fungi' : null,
@@ -221,71 +286,38 @@ $(document).ready(function() {
             }
         }
 
-        // Map functions to microbes
-        const functionMicrobeMap = {
-            nitrogen: ["Azotobacter vinelandii (nitrogen-fixing bacteria)", "Azotobacter chroococcum", "Gluconacetobacter diazotrophicus", "Azospirillum brasilense"],
-            phosphorus: ["Bacillus polymyxa (phosphate-solubilising bacteria)", "Bacillus megaterium (phosphate-solubilising bacteria)", "Bacillus megaterium"],
-            pathogen: [
-                // Will be filtered further by pathogenTypes
-                "Trichoderma harzianum", "Trichoderma lignorum", "Trichoderma koningii", "Beauveria bassiana", "Metarhizium anisopliae", "Lecanicillium lecanii", "Pseudomonas fluorescens"
-            ],
-            root: ["Bacillus subtilis", "Bacillus amyloliquefaciens", "Bacillus licheniformis", "Bacillus pumilus", "Trichoderma harzianum", "Trichoderma koningii"],
-            mycorrhizae: ["Arbuscular Mycorrhizal Fungi (AMF)", "Glomus intraradices", "Glomus clarum", "Glomus aggregatum", "Glomus deserticola", "Glomus macrocarpum", "Glomus caledonium", "Glomus mosseae", "Gigaspora rosea", "Gigaspora margarita", "Scutelospora heterogama"],
-            hormones: ["Bacillus subtilis", "Azotobacter vinelandii (nitrogen-fixing bacteria)", "Bacillus amyloliquefaciens"],
-            soil_balance: ["Bacillus subtilis", "Lactic acid bacteria", "Purple non-sulfur bacteria", "Beneficial yeasts", "Fermenting fungi"],
-            foliar: ["Bacillus subtilis", "Azotobacter vinelandii (nitrogen-fixing bacteria)", "Trichoderma harzianum", "Trichoderma koningii"],
-            moisture: ["Azotobacter vinelandii (nitrogen-fixing bacteria)"]
-        };
+        // Wait for data to be loaded
+        if (!allProducts.length || !allBenefits.length) {
+            alert('Loading data, please try again in a moment.');
+            return;
+        }
 
-        // Pathogen type to microbe mapping
-        const pathogenTypeMicrobeMap = {
-            fungi: ["Trichoderma harzianum", "Trichoderma lignorum", "Trichoderma koningii", "Beauveria bassiana", "Metarhizium anisopliae", "Lecanicillium lecanii"],
-            bacteria: ["Pseudomonas fluorescens"],
-            virus: [], // No direct microbe, but could recommend general biocontrol
-            insects: ["Beauveria bassiana", "Metarhizium anisopliae", "Lecanicillium lecanii"],
-            nematodes: [] // Add if you have nematode biocontrols
-        };
-
-        // Collect all relevant microbes
-        let selectedMicrobes = [];
-        selectedFunctions.forEach(func => {
-            if (func === 'pathogen' && pathogenTypes.length > 0) {
-                pathogenTypes.forEach(type => {
-                    selectedMicrobes = selectedMicrobes.concat(pathogenTypeMicrobeMap[type] || []);
-                });
-            } else if (functionMicrobeMap[func]) {
-                selectedMicrobes = selectedMicrobes.concat(functionMicrobeMap[func]);
-            }
-        });
-        // Remove duplicates
-        selectedMicrobes = [...new Set(selectedMicrobes)];
-
-        // Filter products by selectedMicrobes
-        const matchingProducts = products.filter(product =>
-            product.microbes.some(microbe => selectedMicrobes.includes(microbe))
+        // Filter products by selected benefits
+        const matchingProducts = allProducts.filter(product =>
+            product.benefits.some(benefit => selectedBenefits.includes(benefit))
         );
 
+        // Display results
         let html = '<div class="recommendation-list">';
         if (matchingProducts.length > 0) {
+            html += '<h5>Recommended Products</h5>';
             matchingProducts.forEach(product => {
-                // Find which microbes matched
-                const matchedMicrobes = product.microbes.filter(microbe => selectedMicrobes.includes(microbe));
+                // Find which benefits matched
+                const matchedBenefits = product.benefits.filter(benefit => selectedBenefits.includes(benefit));
                 html += `
                     <div class="recommendation-item mb-4">
                         <h4>${product.product_name}</h4>
-                        <p>${product.description}</p>
-                        <div class="product-info">
-                            <strong>Matching Microbe(s):</strong> ${matchedMicrobes.join(', ')}
-                        </div>
+                        <div><strong>Matching Benefits:</strong> ${matchedBenefits.join(', ')}</div>
+                        <div><strong>All Benefits:</strong> ${product.benefits.join(', ')}</div>
+                        <div><strong>Microbes:</strong> ${product.microbes.map(m => m.name).join(', ')}</div>
                     </div>
                 `;
             });
         } else {
-            html += '<p>No specific recommendations found for your selection. Please contact our support team for more information.</p>';
+            html += '<p>No specific product recommendations found for your selection. Please contact our support team for more information.</p>';
         }
         html += '</div>';
         $('#recommendation-results').html(html);
-        // Optionally scroll to recommendations
         document.getElementById('recommendation-results').scrollIntoView({ behavior: 'smooth' });
     });
 

@@ -1,0 +1,286 @@
+[
+  {
+    "product_name": "Nutri-Life B.Sub™",
+    "microbes": [
+      {
+        "name": "Bacillus subtilis",
+        "type": "bacterium"
+      }
+    ],
+    "benefits": [
+      "Pathogen suppression",
+      "Phosphorus solubilization",
+      "Plant hormone production",
+      "Induced systemic resistance (ISR)",
+      "Biofilm disruption and rhizosphere balance"
+    ]
+  },
+  {
+    "product_name": "Nutri-Life BAM™",
+    "microbes": [
+      {
+        "name": "Lactic acid bacteria",
+        "type": "bacterium"
+      },
+      {
+        "name": "Purple non-sulfur bacteria",
+        "type": "bacterium"
+      },
+      {
+        "name": "Beneficial yeasts",
+        "type": "yeast"
+      },
+      {
+        "name": "Fermenting fungi",
+        "type": "fungus"
+      }
+    ],
+    "benefits": [
+      "Pathogen suppression",
+      "Organic matter decomposition",
+      "Rhizosphere microbial balancing",
+      "Moisture retention via mucilage",
+      "Improved nutrient uptake"
+    ]
+  },
+  {
+    "product_name": "Nutri-Life Bio-N™",
+    "microbes": [
+      {
+        "name": "Azotobacter vinelandii",
+        "type": "bacterium"
+      }
+    ],
+    "benefits": [
+      "Nitrogen fixation",
+      "Moisture retention via mucilage",
+      "Plant hormone production",
+      "Improved seedling emergence",
+      "Rhizosphere microbial balancing"
+    ]
+  },
+  {
+    "product_name": "Nutri-Life Bio-Plex™",
+    "microbes": [
+      {
+        "name": "Azotobacter vinelandii",
+        "type": "bacterium"
+      },
+      {
+        "name": "Bacillus subtilis",
+        "type": "bacterium"
+      }
+    ],
+    "benefits": [
+      "Nitrogen fixation",
+      "Plant hormone production",
+      "Pathogen suppression",
+      "Phosphorus solubilization",
+      "Improved seedling emergence"
+    ]
+  },
+  {
+    "product_name": "Nutri-Life Bio-P™",
+    "microbes": [
+      {
+        "name": "Bacillus polymyxa",
+        "type": "bacterium"
+      },
+      {
+        "name": "Bacillus megaterium",
+        "type": "bacterium"
+      }
+    ],
+    "benefits": [
+      "Phosphorus solubilization",
+      "Potassium solubilization",
+      "Pathogen suppression",
+      "Plant hormone production",
+      "Improved nutrient uptake"
+    ]
+  },
+  {
+    "product_name": "Nutri-Life Micro-Force™",
+    "microbes": [
+      {
+        "name": "Bacillus amyloliquefaciens",
+        "type": "bacterium"
+      },
+      {
+        "name": "Bacillus licheniformis",
+        "type": "bacterium"
+      },
+      {
+        "name": "Bacillus megaterium",
+        "type": "bacterium"
+      },
+      {
+        "name": "Bacillus pumilus",
+        "type": "bacterium"
+      },
+      {
+        "name": "Bacillus subtilis",
+        "type": "bacterium"
+      }
+    ],
+    "benefits": [
+      "Pathogen suppression",
+      "Plant hormone production",
+      "Induced systemic resistance (ISR)",
+      "Phosphorus solubilization",
+      "Root development enhancement"
+    ]
+  },
+  {
+    "product_name": "Nutri-Life Myco-Force™",
+    "microbes": [
+      {
+        "name": "Beauveria bassiana",
+        "type": "fungus"
+      },
+      {
+        "name": "Metarhizium anisopliae",
+        "type": "fungus"
+      },
+      {
+        "name": "Lecanicillium lecanii",
+        "type": "fungus"
+      }
+    ],
+    "benefits": [
+      "Insect pest biocontrol",
+      "Pathogen suppression",
+      "Induced systemic resistance (ISR)",
+      "Rhizosphere microbial balancing",
+      "Improved seedling emergence"
+    ]
+  },
+  {
+    "product_name": "Nutri-Life Platform®",
+    "microbes": [
+      {
+        "name": "Glomus intraradices",
+        "type": "AMF"
+      },
+      {
+        "name": "Glomus clarum",
+        "type": "AMF"
+      },
+      {
+        "name": "Glomus aggregatum",
+        "type": "AMF"
+      },
+      {
+        "name": "Glomus deserticola",
+        "type": "AMF"
+      },
+      {
+        "name": "Glomus macrocarpum",
+        "type": "AMF"
+      },
+      {
+        "name": "Glomus caledonium",
+        "type": "AMF"
+      },
+      {
+        "name": "Glomus mosseae",
+        "type": "AMF"
+      },
+      {
+        "name": "Gigaspora rosea",
+        "type": "AMF"
+      },
+      {
+        "name": "Gigaspora margarita",
+        "type": "AMF"
+      },
+      {
+        "name": "Scutellospora heterogama",
+        "type": "AMF"
+      },
+      {
+        "name": "Azospirillum brasilense",
+        "type": "bacterium"
+      },
+      {
+        "name": "Azotobacter chroococcum",
+        "type": "bacterium"
+      },
+      {
+        "name": "Gluconacetobacter diazotrophicus",
+        "type": "bacterium"
+      },
+      {
+        "name": "Bacillus megaterium",
+        "type": "bacterium"
+      },
+      {
+        "name": "Pseudomonas fluorescens",
+        "type": "bacterium"
+      }
+    ],
+    "benefits": [
+      "Mycorrhizal symbiosis",
+      "Phosphorus solubilization",
+      "Zinc mobilization",
+      "Nitrogen fixation",
+      "Improved nutrient uptake"
+    ]
+  },
+  {
+    "product_name": "Nutri-Life Root-Guard™",
+    "microbes": [
+      {
+        "name": "Trichoderma harzianum",
+        "type": "fungus"
+      }
+    ],
+    "benefits": [
+      "Pathogen suppression",
+      "Induced systemic resistance (ISR)",
+      "Plant hormone production",
+      "Improved root growth and architecture",
+      "Rhizosphere microbial balancing"
+    ]
+  },
+  {
+    "product_name": "Nutri-Life Sudo-Shield™",
+    "microbes": [
+      {
+        "name": "Pseudomonas fluorescens",
+        "type": "bacterium"
+      }
+    ],
+    "benefits": [
+      "Pathogen suppression",
+      "Induced systemic resistance (ISR)",
+      "Iron reduction",
+      "Rhizosphere microbial balancing",
+      "Improved root growth and architecture"
+    ]
+  },
+  {
+    "product_name": "Nutri-Life Tricho-Shield™",
+    "microbes": [
+      {
+        "name": "Trichoderma harzianum",
+        "type": "fungus"
+      },
+      {
+        "name": "Trichoderma lignorum",
+        "type": "fungus"
+      },
+      {
+        "name": "Trichoderma koningii",
+        "type": "fungus"
+      }
+    ],
+    "benefits": [
+      "Pathogen suppression",
+      "Induced systemic resistance (ISR)",
+      "Plant hormone production",
+      "Improved seedling emergence",
+      "Rhizosphere microbial balancing"
+    ]
+  }
+] 

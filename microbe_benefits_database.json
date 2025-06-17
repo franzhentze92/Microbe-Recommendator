@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Nitrogen fixation",
+    "description": "Converts atmospheric nitrogen (N₂) into ammonium (NH₄⁺), making it available to plants."
+  },
+  {
+    "name": "Phosphorus solubilization",
+    "description": "Mobilizes locked-up phosphorus in soil, converting it into plant-available forms."
+  },
+  {
+    "name": "Potassium solubilization",
+    "description": "Releases potassium from mineral-bound forms, increasing availability for root uptake."
+  },
+  {
+    "name": "Iron reduction",
+    "description": "Reduces Fe³⁺ to Fe²⁺ or produces siderophores to enhance iron availability to plants."
+  },
+  {
+    "name": "Manganese reduction",
+    "description": "Improves manganese uptake through microbial redox reactions in the rhizosphere."
+  },
+  {
+    "name": "Zinc mobilization",
+    "description": "Releases chelated or bound zinc, enhancing plant absorption of this key micronutrient."
+  },
+  {
+    "name": "Sulfur oxidation",
+    "description": "Converts elemental sulfur or organic sulfur into sulfate (SO₄²⁻), usable by plants."
+  },
+  {
+    "name": "Plant hormone production",
+    "description": "Produces growth-promoting hormones like auxins, gibberellins, and cytokinins."
+  },
+  {
+    "name": "Induced systemic resistance (ISR)",
+    "description": "Triggers the plant's immune system to respond more effectively to future pathogen attacks."
+  },
+  {
+    "name": "Pathogen suppression",
+    "description": "Inhibits or outcompetes harmful fungi, bacteria, or nematodes in the root or leaf zone."
+  },
+  {
+    "name": "Insect pest biocontrol",
+    "description": "Naturally targets, repels, or infects insect pests such as aphids, thrips, or whiteflies."
+  },
+  {
+    "name": "Mycorrhizal symbiosis",
+    "description": "Forms symbiotic associations with plant roots, enhancing water and nutrient uptake."
+  },
+  {
+    "name": "Organic matter decomposition",
+    "description": "Accelerates breakdown of crop residues, stubble, or green material to recycle nutrients."
+  },
+  {
+    "name": "Compost enhancement",
+    "description": "Boosts composting efficiency by increasing microbial activity and decomposition rates."
+  },
+  {
+    "name": "Biofilm disruption and rhizosphere balance",
+    "description": "Disrupts harmful microbial biofilms and supports beneficial soil microbial populations."
+  },
+  {
+    "name": "Moisture retention via mucilage",
+    "description": "Produces water-binding gels that help retain soil moisture and reduce drought stress."
+  },
+  {
+    "name": "Heavy metal detoxification",
+    "description": "Immobilizes or transforms toxic heavy metals (e.g. aluminum, cadmium) in the soil."
+  },
+  {
+    "name": "Salinity tolerance improvement",
+    "description": "Enhances plant resilience to salt stress through osmolyte production or ion modulation."
+  },
+  {
+    "name": "Improved seedling emergence",
+    "description": "Promotes early root development and uniform seedling emergence for stronger establishment."
+  },
+  {
+    "name": "Rhizosphere microbial balancing",
+    "description": "Rebalances the soil microbiome to favor beneficial organisms over pathogens."
+  }
+] 

@@ -1,0 +1,194 @@
+[
+  {
+    "product_name": "Nutri‑Life B.Sub™",
+    "microbes": ["Bacillus subtilis"],
+    "application": ["Soil", "Foliar"],
+    "product_form": "Liquid",
+    "organic_certified": true,
+    "benefits": [
+      "Plant growth promotion via enzyme and phytohormone production",
+      "Bio‑balancing probiotic supports healthy rhizosphere",
+      "Promotes production of phytoalexins for pathogen resistance",
+      "Phosphorus solubilization through organic acids and siderophores",
+      "Induced systemic resistance (ISR) enhances disease tolerance",
+      "Stress resilience against heat, drought, UV, and chemicals",
+      "Biofilm formation aids beneficial colonization",
+      "Can reduce reliance on chemical inputs"
+    ],
+    "description": "Selected Bacillus subtilis strain with protein activator powder, designed to boost growth, nutrient access, resilience, and natural immunity.",
+    "link": "https://nutri-tech.com.au/products/b-sub"
+  },
+  {
+    "product_name": "Nutri‑Life BAM™",
+    "microbes": [
+      "Lactic acid bacteria",
+      "Purple non‑sulfur bacteria",
+      "Beneficial yeasts",
+      "Fermenting fungi"
+    ],
+    "application": ["Soil", "Foliar", "Compost"],
+    "product_form": "Liquid",
+    "organic_certified": true,
+    "benefits": [
+      "Accelerates compost and residue decomposition",
+      "Improves nutrient availability (P, N, micronutrients)",
+      "Enhances root development and function",
+      "Fixes atmospheric nitrogen via anaerobes",
+      "Boosts plant health, resilience and yield",
+      "Balances microbial communities in soil and phyllosphere",
+      "Populates roots and leaves with beneficial microbes",
+      "Improves soil structure and water-holding capacity",
+      "Supports remediation of manure ponds and septic systems"
+    ],
+    "description": "Anaerobic microbial probiotic blend optimized for soil, foliar, or compost applications—accelerates organic breakdown, nutrient cycling, resilience, and cleanup tasks.",
+    "link": "https://nutri-tech.com.au/products/nutri-life-bam"
+  },
+  {
+    "product_name": "Nutri‑Life Bio‑N™",
+    "microbes": ["Azotobacter vinelandii"],
+    "application": ["Soil", "Seed treatment"],
+    "product_form": "Liquid",
+    "organic_certified": true,
+    "benefits": [
+      "Biological nitrogen fixation (free‑living N₂ → NH₄⁺)",
+      "Phytohormone production: auxins, gibberellins, cytokinins",
+      "Enhances root growth and seed germination",
+      "Increases moisture retention via mucilage secretion",
+      "Improves soil fertility and reduces erosion",
+      "Releases phosphorus via organic acid secretion",
+      "Performs reliably under Australian conditions"
+    ],
+    "description": "Azotobacter vinelandii inoculant that supplies nitrogen and growth hormones, while enhancing root development, moisture retention, fertility, and resilience.",
+    "link": "https://nutri-tech.com.au/products/bio-n"
+  },
+  {
+    "product_name": "Nutri‑Life Bio‑P™",
+    "microbes": ["Bacillus spp. (phosphate-solubilizing)"],
+    "application": ["Soil", "Foliar"],
+    "product_form": "Liquid",
+    "organic_certified": false,
+    "benefits": [
+      "Solubilizes insoluble soil phosphorus (rock phosphate)",
+      "Promotes root growth and root function",
+      "Increases crop yield and quality",
+      "Enhances Brix (sugar) levels",
+      "Supplies season-long phosphorus availability",
+      "Has no withholding period — safe pre-harvest"
+    ],
+    "description": "A Bacillus-based microbial suspension designed to break down locked-up phosphorus reserves, supporting roots, sugar levels, yield, and crop quality.",
+    "link": "https://newgenagri.com/product/nutri-life-bio-p/"
+  },
+  {
+    "product_name": "Nutri‑Life Platform®",
+    "microbes": [
+      "AMF (Glomus and Gigaspora spp.)",
+      "Trichoderma spp.",
+      "Azospirillum",
+      "Azotobacter",
+      "Bacillus megaterium",
+      "Pseudomonas fluorescens"
+    ],
+    "application": ["Seed treatment", "Soil"],
+    "product_form": "Solid",
+    "organic_certified": false,
+    "benefits": [
+      "Expands root zone dramatically via AMF colonization",
+      "Builds stable humus through glomalin production",
+      "Improves nutrient uptake of P, Zn, Ca",
+      "Serves as synergist to enhance nitrogen fixation",
+      "Lifts calcium levels in plants",
+      "Balances soil microbial populations",
+      "Can reduce fertilizer requirements",
+      "Boosts crop resilience and bio-balance",
+      "Trichoderma component increases root growth, disease suppression, composting"
+    ],
+    "description": "A high‑propagule, multi‑species seed or soil inoculant combining AM fungi with beneficial bacteria and Trichoderma to enhance root systems, nutrient access, microbial balance, and resilience.",
+    "link": "https://nutri-tech.com.au/products/platform"
+  },
+  {
+    "product_name": "Nutri‑Life Micro‑Force™",
+    "microbes": ["Bacillus amyloliquefaciens", "Bacillus spp."],
+    "application": ["Soil", "Foliar"],
+    "product_form": "Liquid",
+    "organic_certified": false,
+    "benefits": [
+      "Supports root development and root function",
+      "Enhances atmospheric nitrogen fixation and availability",
+      "Boosts crop resilience and stress tolerance",
+      "Balances soil microbial communities",
+      "Stimulates plant growth through beneficial microbial interactions"
+    ],
+    "description": "A Bacillus‑dominated blend intended to energize root growth, support biological nitrogen fixation, stress resilience, and a well-balanced soil microbiome.",
+    "link": "https://agresol.com.au/product/nutri-life-micro-force/"
+  },
+  {
+    "product_name": "Nutri‑Life Tricho‑Shield™",
+    "microbes": ["Trichoderma harzianum", "Trichoderma lignorum", "Trichoderma koningii"],
+    "application": ["Soil", "Foliar", "Seed"],
+    "product_form": "Solid (talc-based)",
+    "organic_certified": false,
+    "benefits": [
+      "Promotes plant and root growth via Trichoderma metabolites",
+      "Balances soil and leaf microbial populations to suppress pathogens",
+      "Boosts early root development and disease resistance",
+      "Effective at all crop stages (pre-planting to fruit set)",
+      "No withholding period—safe up to harvest"
+    ],
+    "description": "Talc-based Trichoderma blend designed to enhance root-zone balance, plant growth, pathogen suppression and microbial equilibrium.",
+    "link": "https://nutri-tech.com.au/products/tricho-shield"
+  },
+  {
+    "product_name": "Nutri‑Life Myco‑Force™",
+    "microbes": ["Beauveria bassiana", "Metarhizium anisopliae", "Lecanicillium lecanii"],
+    "application": ["Soil", "Foliar"],
+    "product_form": "Solid (talc-based)",
+    "organic_certified": true,
+    "benefits": [
+      "Bio-balancing fungal probiotic for soil health",
+      "Supports recovery from insect damage via entomopathogenic action",
+      "Can be used right up to harvest—no withholding period",
+      "Applicable at all crop stages (pre-planting to fruit set)",
+      "Flexible delivery via soil, foliar spray, or drench",
+      "Reduces reliance on chemical pesticides",
+      "Based on naturally occurring fungal species"
+    ],
+    "description": "Talc-based entomopathogenic fungal blend to repopulate soils with beneficial fungi, support plant resilience, and aid insect damage recovery.",
+    "link": "https://nutri-tech.com.au/products/myco-force"
+  },
+  {
+    "product_name": "Nutri‑Life Root‑Guard™",
+    "microbes": ["Trichoderma harzianum", "Arthrobotrys conoides", "Purpureocillium lilacinus", "Pochonia chlamydosporium"],
+    "application": ["Soil"],
+    "product_form": "Solid (talc-based)",
+    "organic_certified": false,
+    "benefits": [
+      "Bio-balancing probiotic to improve soil food-web ratios",
+      "Enhances root-zone microbial environment and plant growth",
+      "Effective at all crop stages (seed to fruit set)",
+      "Contains multiple beneficial fungi for targeted soil remediation",
+      "Biodegradable and user-friendly",
+      "No withholding period"
+    ],
+    "description": "Multi-fungal talc powder designed to restore balance in the root zone and support plant development across seasonal stages.",
+    "link": "https://nutri-tech.com.au/products/root-guard"
+  },
+{
+  "product_name": "Nutri‑Life Sudo‑Shield™",
+  "microbes": ["Pseudomonas fluorescens"],
+  "application": ["Soil", "Foliar", "Seedling dip", "Seed treatment"],
+  "product_form": "Solid (talc)",
+  "organic_certified": true,
+  "benefits": [
+    "Aids recovery of pathogen-damaged soils and plants",
+    "Promotes plant growth and resilience",
+    "Solubilizes silica and phosphate for improved nutrient availability",
+    "Provides frost protection by eliminating ice-nucleating pathogens",
+    "Enhances tolerance to abiotic stresses (drought, heat, salinity)",
+    "Boosts plant immune system responses",
+    "Acts as a powerful rescue remedy in degraded or disease-prone soils",
+    "Can be brewed on-farm (with LMF, molasses, fulvic acid) for enhanced performance"
+  ],
+  "description": "High-performance Pseudomonas fluorescens inoculant in talc form to restore soil health, release silica/phosphate, protect from frost and stress, and support plant recovery.",
+  "link": "https://nutri-tech.com.au/products/nutri-life-sudo-shield"
+}
+]
